@@ -199,13 +199,13 @@
     <!-- Google Fonts & Custom Styles -->
     <style>
 
+/* Main Call Macro Box */
 .call-macro {
     position: fixed;
-    right: 0px; /* Now visible by default */
+    right: 0;
     bottom: 50px;
-    width: 250px;
-    background-color: black; /* Black background */
-    color: white;
+    background-color: #a1ccc2; /* Blended background */
+    color: black;
     padding: 15px;
     font-size: 1rem;
     font-weight: bold;
@@ -213,32 +213,44 @@
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
-    transition: right 0.5s ease-in-out;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    min-width: 250px; /* Fixed width for consistency */
 }
 
-/* Update the button position */
+/* Arrow Button (Square) */
 .macro-btn {
     background: white;
-    border: 2px solid black;
+    border: none;
     color: black;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 50%;
+    padding: 10px;
+    width: 40px; /* Square shape */
+    height: 40px; /* Square shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px 0 0 5px; /* Matches message box */
     transition: all 0.3s ease-in-out;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     position: absolute;
-    left: -40px; /* Attaches the button to the left side */
-    top: 50%;
-    transform: translateY(-50%);
+    left: -40px; /* Stays visible even when message hides */
 }
 
-/* Hover effect */
+/* Arrow Hover Effect */
 .macro-btn:hover {
-    background-color: black;
-    color: white;
+    background-color: #8fb0a6; /* Slightly darker blend */
     transform: scale(1.1);
 }
+
+/* Hide Message, Show Arrow */
+.hidden {
+    transform: translateX(250px); /* Moves message out, arrow remains */
+}
+
+
+
+
 
 
       /* Import Google Fonts */
@@ -464,6 +476,166 @@
     .btn-primary:hover {
       background-color: #ff6347;
     }
+
+    .featurette-box {
+    background: rgba(0, 0, 0, 0.05); /* Light grey background */
+    padding: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center; /* Centers content vertically */
+    justify-content: space-between; /* Pushes text to the left and image to the right */
+    text-align: left; /* Align text to the left */
+}
+
+.featurette-content {
+    flex: 1; /* Allows text to take up available space */
+    padding-right: 20px; /* Adds spacing between text and image */
+}
+
+.featurette-img {
+    width: 250px; /* Fixed width */
+    height: 250px; /* Fixed height */
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensures the image fills the circle */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .featurette-box {
+        flex-direction: column; /* Stack items vertically on small screens */
+        text-align: center; /* Center align text */
+    }
+
+    .featurette-content {
+        padding-right: 0; /* Remove spacing on mobile */
+    }
+
+    .featurette-img {
+        margin-top: 20px; /* Add spacing above the image */
+    }
+}
+
+
+/* Css for why hire decor by dee*/
+/* Background for the whole section */
+.why-hire-box {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.3)); /* Soft gradient effect */
+    padding: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Styling for each key point */
+.why-hire-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between key points */
+}
+
+.why-hire-item {
+    background: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover effect: Adds a glowing border instead of changing the entire background */
+.why-hire-item:hover {
+    box-shadow: 0px 0px 15px 5px rgba(161, 204, 194, 0.7); /* Coral glow effect */
+    transform: translateY(-3px); /* Subtle lift */
+}
+
+/* Title inside each key point */
+.why-hire-item h4 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Image styling */
+.featurette-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .why-hire-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .why-hire-content {
+        align-items: center;
+    }
+
+    .featurette-img {
+        width: 180px;
+        height: 180px;
+        margin-top: 20px;
+    }
+}
+
+/*second Section*/
+/* Featurette Background */
+.featurette-box {
+    background: url('Images/subtle-floral-bg.jpg') no-repeat center center/cover; /* Blended floral background */
+    padding: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: all 0.5s ease-in-out;
+}
+
+/* Fade-in Animation */
+.fade-in-text, .fade-in-img {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.featurette-box.visible .fade-in-text, .featurette-box.visible .fade-in-img {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Image Styling */
+.featurette-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Elegant shadow */
+}
+
+/* Hover Effect */
+.featurette-box:hover {
+    box-shadow: 0px 0px 25px 8px rgba(161, 204, 194, 0.8); /* Soft glowing effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .featurette-box {
+        flex-direction: column; /* Stack content */
+        text-align: center;
+        padding: 30px;
+    }
+    .featurette-img {
+        max-width: 80%;
+        margin-top: 20px;
+    }
+}
+
   </style>
   
 
@@ -502,41 +674,95 @@
 
     <!-- <hr class="featurette-divider"> -->
 
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span class="text-body-secondary">It’ll blow your mind.</span></h2>
-        <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
+    <div class="row featurette why-hire-box">
       <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-body-secondary">See for yourself.</span></h2>
-        <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+          <h2 class="featurette-heading fw-normal lh-1">WHY HIRE DÉCOR BY DEE?</h2>
+          <div class="why-hire-content">
+              <div class="why-hire-item">
+                  <h4>1. Tailored to Perfection</h4>
+                  <p>“Your event is as unique as you are, and we’re here to make it shine. From the initial concept to 
+                  the final execution, we tailor every detail to reflect your style and vision. No two events are 
+                  alike—because no two clients are the same.”</p>
+              </div>
+              <div class="why-hire-item">
+                  <h4>2. Stress-Free Planning</h4>
+                  <p>“Planning an event should be exciting, not overwhelming. Let us handle the logistics, vendor 
+                  coordination, and timelines so you can focus on enjoying the moment. With Decor by Dee, you 
+                  can relax knowing every detail is in expert hands.”</p>
+              </div>
+              <div class="why-hire-item">
+                  <h4>3. Trusted Partnerships</h4>
+                  <p>“Over the years, we’ve built strong relationships with the best vendors in the industry—florists, 
+                  caterers, photographers, and more. We match the perfect team to your event, ensuring seamless 
+                  execution and exceptional quality.”</p>
+              </div>
+              <div class="why-hire-item">
+                  <h4>4. Creativity That Inspires</h4>
+                  <p>“We believe in pushing boundaries and thinking outside the box. Whether it’s a custom 
+                  centerpiece, a unique theme, or a show-stopping cake, we bring fresh, innovative ideas to make 
+                  your event stand out.”</p>
+              </div>
+          </div>
       </div>
       <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+          <img src="Images/image2.png" class="featurette-img img-fluid mx-auto" alt="Featurette Image">
       </div>
+  </div>
+  
+  <hr class="featurette-divider">
+  
+
+  <div class="row featurette featurette-box">
+    <div class="col-md-7 fade-in-text">
+        <h2 class="featurette-heading fw-normal lh-1">Moments may fade, but memories stay forever.</h2>
+        <p class="lead">
+            "At <b>Decor by Dee</b>, we’re here to bring your vision to life, creating unforgettable moments for 
+            every occasion. Whether it’s a birthday, baby shower, bridal shower, gender reveal, graduation, 
+            holiday celebration, or a special surprise for someone dear to you, we’ve got you covered. From 
+            surprise birthday parties and romantic proposals to dreamy Valentine’s Day setups, we handle 
+            every detail with creativity and passion. Sit back, relax, and enjoy your special day while we 
+            make it magical for you."
+        </p>
     </div>
+    <div class="col-md-5 fade-in-img">
+        <img src="Images/dbd.png" class="featurette-img img-fluid mx-auto" alt="Memorable Events">
+    </div>
+</div>
 
-    <hr class="featurette-divider">
+<hr class="featurette-divider">
 
-    <div class="row featurette">
+
+    <div class="row featurette featurette-box">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span class="text-body-secondary">Checkmate.</span></h2>
-        <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+        <h2 class="featurette-heading fw-normal lh-1">MEET YOUR EVENT PLANNER</h2>
+        <p class="lead">Hi There,<br> 
+          <br>"For a while, I followed the expected path, stepping into a 9-to-5 job. But it didn’t take long for 
+          me to realize it wasn’t my cup of tea. I always had this notion of doing something bigger, 
+          something creative where I could bring joy to others and turn dreams into reality. Deep down, I 
+          knew I was meant for more than just the rat race.</br> 
+          <br>Everything changed when I started helping friends and neighbors with their celebrations. From 
+          whimsical kids’ birthday parties to heartfelt baby showers and exciting gender reveals for first
+          time parents, I discovered my passion for creating magical moments. The smiles, laughter, and 
+          gratitude I received were more fulfilling than anything I’d ever experienced. Word spread, and 
+          soon, more people in my community were reaching out, eager to have me bring their visions to 
+          life. What began as a side passion quickly grew into my true calling.</br> 
+          <br>Today, I’ve fully embraced this journey of crafting beautiful, unforgettable events for every 
+          milestone in life. There’s nothing more rewarding than transforming ideas into magical 
+          experiences and creating memories that last a lifetime."</br> 
+          <br><b>Cheers, 
+          <br>DEE</b></br> </p>
       </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
-      </div>
+      <div class="col-md-5 d-flex justify-content-center align-items-center">
+        <img src="Images/image1.jpg" class="featurette-img img-fluid" alt="Featurette Image">
     </div>
-
+    
+    </div>
+    
     <hr class="featurette-divider">
+
+
+
+
 
     <!-- /END THE FEATURETTES -->
 
@@ -641,28 +867,46 @@
   });
 
   
-  
-document.addEventListener("DOMContentLoaded", function() {
+  /*macro Button script*/
+  document.addEventListener("DOMContentLoaded", function() {
     let callMacro = document.getElementById("call-macro");
     let toggleMacro = document.getElementById("toggle-macro");
 
-    let isOpen = true; // Set true by default so it's visible initially
+    let isOpen = true; // Initially visible
 
-    // Set the initial button text
-    toggleMacro.innerHTML = "→"; 
-
-    // Toggle macro when arrow button is clicked
+    // Toggle function
     toggleMacro.addEventListener("click", function() {
         if (isOpen) {
-            callMacro.style.right = "-250px"; 
-            toggleMacro.innerHTML = "←"; // Arrow pointing left when hidden
+            callMacro.classList.add("hidden"); // Hides message, keeps arrow
+            toggleMacro.innerHTML = "←"; // Right arrow when hidden
         } else {
-            callMacro.style.right = "0px"; 
-            toggleMacro.innerHTML = "→"; // Arrow pointing right when shown
+            callMacro.classList.remove("hidden"); // Shows message
+            toggleMacro.innerHTML = "→"; // Left arrow when shown
         }
         isOpen = !isOpen;
     });
 });
+
+/*second section*/
+document.addEventListener("DOMContentLoaded", function () {
+    let featurette = document.querySelector('.featurette-box');
+
+    function revealOnScroll() {
+        let windowHeight = window.innerHeight;
+        let elementTop = featurette.getBoundingClientRect().top;
+        let elementVisible = 150;
+
+        if (elementTop < windowHeight - elementVisible) {
+            featurette.classList.add("visible");
+        }
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+});
+
+
+
+
 
 
 
