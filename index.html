@@ -17,6 +17,64 @@
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+
+      /*style of font for the entire web page*/
+/* Import Elegant Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Cormorant+Garamond:wght@500&display=swap');
+
+/* Apply Global Theme */
+body {
+    font-family: 'Cormorant Garamond', serif; /* Elegant serif font for content */
+    color: #333;
+}
+
+/* Headers - Luxurious Script Font */
+h1, h2, h3, h4 {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    font-size: 2.5rem; /* Adjusted for elegance */
+}
+
+/* Subheadings and Minor Headers */
+h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+}
+
+/* Content & Body Text */
+p, a, button {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+}
+
+/* Navbar Styling */
+.navbar {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* Buttons - Elegant Yet Readable */
+button, .btn {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Featurette Section */
+.featurette-heading {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem;
+}
+
+/* Footer Styling */
+footer {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* Contact Form Text */
+.featurette-text {
+    font-size: 1.2rem;
+}
+
+      /*end of style of font for the entire web page*/
 .custom-black-button {
     background-color: black !important;  /* Makes the button always black */
     border: 2px solid black !important;  /* Ensures border stays black */
@@ -260,8 +318,11 @@
       .navbar {
           min-height: 60px; /* Adjust height */
           padding: 10px 20px;
-          background-color: #a1ccc2 !important;
-      }
+          /*background-color: #a1ccc2 !important;*/
+          background-color: linear-gradient(135deg, #a1ccc2, #ffffff);
+}
+
+      
 
       /* Navbar Brand */
       #decorbydee {
@@ -635,6 +696,141 @@
         margin-top: 20px;
     }
 }
+/*Css for send me a mail*/
+.featurette-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: nowrap;
+  margin-top: 50px;
+}
+
+.featurette-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featurette-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.featurette-img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.featurette-text {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.featurette-btn {
+  background-color: #a1ccc2;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.featurette-btn:hover {
+  background-color: #8ab5ad;
+}
+
+.email-hidden {
+  display: none;
+  color: #333;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.email-visible {
+  display: block;
+}
+
+/*card flip*/
+.why-hire-box {
+    text-align: center;
+    padding: 40px 0;
+    background: #f9f9f9; /* Light subtle background */
+}
+
+.why-hire-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    gap: 30px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    width: 100%;
+    height: 180px; /* Increased height for better content fit */
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+.card:hover .card-inner,
+.card.flip .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Front Design */
+.card-front {
+    background: #a1ccc2;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Back Design */
+.card-back {
+    background: white;
+    color: black;
+    transform: rotateY(180deg);
+    font-size: 1rem;
+    padding: 10px;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+    .why-hire-content {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+
+    .card-inner {
+        height: 200px; /* More height for mobile */
+    }
+}
 
   </style>
   
@@ -672,44 +868,156 @@
 
     <!-- START THE FEATURETTES -->
 
-    <!-- <hr class="featurette-divider"> -->
+
+    <div class="row text-center featurette-container">
+      <!-- Card 1: Email -->
+      <div class="col-md-4">
+        <div class="featurette-card">
+          <img src="Images/colab.png" class="featurette-img img-fluid" alt="Email Inquiry">
+          <p class="featurette-text">Are you a brand wanting to collaborate?</p>
+          <button class="featurette-btn" a href="mailto:info.deeorbix@gmail.com" id="email-btn">SEND ME AN EMAIL</button>
+          <p id="email-info" class="email-hidden">info.deeorbix@gmail.com</p>
+        </div>
+      </div>
+    
+    
+      <!-- Card 2: Schedule a Call -->
+      <div class="col-md-4">
+        <div class="featurette-card">
+          <img src="Images/out_event.png" class="featurette-img img-fluid" alt="Schedule a Call">
+          <p class="featurette-text">Want to hire us to style and set up your event?</p>
+          <button class="featurette-btn" data-bs-toggle="modal" data-bs-target="#contactModal">
+            SCHEDULE A CALL TODAY
+          </button>
+        </div>
+      </div>
+    
+      <!-- Card 3: Reach Out -->
+      <div class="col-md-4">
+        <div class="featurette-card">
+          <img src="Images/consult.png" class="featurette-img img-fluid" alt="Reach Out">
+          <p class="featurette-text">Ready to book a virtual party consultation call with Dee?</p>
+          <button class="featurette-btn" id="scroll-btn">REACH OUT BELOW</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Contact Form Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="contactModalLabel">Book Now - Get a Quote</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="contactForm">
+              <input type="hidden" name="_subject" value="New Booking Inquiry!">
+              <input type="hidden" name="_captcha" value="false">
+              <div class="mb-3">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="fullName" name="Full Name" required>
+              </div>
+              <div class="mb-3">
+                <label for="contactNumber" class="form-label">Contact Number</label>
+                <input type="tel" class="form-control" id="contactNumber" name="Contact Number" required>
+              </div>
+              <div class="mb-3">
+                <label for="emailAddress" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="emailAddress" name="Email Address" required>
+              </div>
+              <div class="mb-3">
+                <label for="eventDescription" class="form-label">Event Description</label>
+                <textarea class="form-control" id="eventDescription" name="Event Description" rows="3" required></textarea>
+              </div>
+              <p class="text-muted">We will get back to you as soon as possible!</p>
+              <button type="submit" class="btn btn-primary w-100">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- SCROLL TO CONTACT SECTION -->
+    <div id="contactSection"></div>
+    
+    <!-- JavaScript -->
+    <script>
+      document.getElementById("email-btn").addEventListener("click", function () {
+        document.getElementById("email-info").classList.toggle("email-visible");
+      });
+    
+      document.getElementById("scroll-btn").addEventListener("click", function () {
+        document.getElementById("contactSection").scrollIntoView({ behavior: "smooth" });
+      });
+    </script>
+    
+
 
     <div class="row featurette why-hire-box">
-      <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading fw-normal lh-1">WHY HIRE DÉCOR BY DEE?</h2>
+      <div class="col-md-12 text-center">
+          <h2 class="featurette-heading fw-normal lh-1">Why hire us?</h2>
+      </div>
+  
+      <div class="col-md-12">
           <div class="why-hire-content">
-              <div class="why-hire-item">
-                  <h4>1. Tailored to Perfection</h4>
-                  <p>“Your event is as unique as you are, and we’re here to make it shine. From the initial concept to 
-                  the final execution, we tailor every detail to reflect your style and vision. No two events are 
-                  alike—because no two clients are the same.”</p>
+              <div class="why-hire-item card">
+                  <div class="card-inner">
+                      <div class="card-front">
+                          <h4>Tailored to Perfection</h4>
+                      </div>
+                      <div class="card-back">
+                          <p>“Your event is as unique as you are, and we’re here to make it shine. From the initial concept to 
+                          the final execution, we tailor every detail to reflect your style and vision. No two events are 
+                          alike—because no two clients are the same.”</p>
+                      </div>
+                  </div>
               </div>
-              <div class="why-hire-item">
-                  <h4>2. Stress-Free Planning</h4>
-                  <p>“Planning an event should be exciting, not overwhelming. Let us handle the logistics, vendor 
-                  coordination, and timelines so you can focus on enjoying the moment. With Decor by Dee, you 
-                  can relax knowing every detail is in expert hands.”</p>
+  
+              <div class="why-hire-item card">
+                  <div class="card-inner">
+                      <div class="card-front">
+                          <h4>Stress-Free Planning</h4>
+                      </div>
+                      <div class="card-back">
+                          <p>“Planning an event should be exciting, not overwhelming. Let us handle the logistics, vendor 
+                          coordination, and timelines so you can focus on enjoying the moment. With Decor by Dee, you 
+                          can relax knowing every detail is in expert hands.”</p>
+                      </div>
+                  </div>
               </div>
-              <div class="why-hire-item">
-                  <h4>3. Trusted Partnerships</h4>
-                  <p>“Over the years, we’ve built strong relationships with the best vendors in the industry—florists, 
-                  caterers, photographers, and more. We match the perfect team to your event, ensuring seamless 
-                  execution and exceptional quality.”</p>
+  
+              <div class="why-hire-item card">
+                  <div class="card-inner">
+                      <div class="card-front">
+                          <h4>Trusted Partnerships</h4>
+                      </div>
+                      <div class="card-back">
+                          <p>“Over the years, we’ve built strong relationships with the best vendors in the industry—florists, 
+                          caterers, photographers, and more. We match the perfect team to your event, ensuring seamless 
+                          execution and exceptional quality.”</p>
+                      </div>
+                  </div>
               </div>
-              <div class="why-hire-item">
-                  <h4>4. Creativity That Inspires</h4>
-                  <p>“We believe in pushing boundaries and thinking outside the box. Whether it’s a custom 
-                  centerpiece, a unique theme, or a show-stopping cake, we bring fresh, innovative ideas to make 
-                  your event stand out.”</p>
+  
+              <div class="why-hire-item card">
+                  <div class="card-inner">
+                      <div class="card-front">
+                          <h4>Creativity That Inspires</h4>
+                      </div>
+                      <div class="card-back">
+                          <p>“We believe in pushing boundaries and thinking outside the box. Whether it’s a custom 
+                          centerpiece, a unique theme, or a show-stopping cake, we bring fresh, innovative ideas to make 
+                          your event stand out.”</p>
+                      </div>
+                  </div>
               </div>
           </div>
-      </div>
-      <div class="col-md-5 order-md-1">
-          <img src="Images/image2.png" class="featurette-img img-fluid mx-auto" alt="Featurette Image">
       </div>
   </div>
   
   <hr class="featurette-divider">
+  
   
 
   <div class="row featurette featurette-box">
@@ -732,9 +1040,11 @@
 <hr class="featurette-divider">
 
 
+
+
     <div class="row featurette featurette-box">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">MEET YOUR EVENT PLANNER</h2>
+        <h2 class="featurette-heading fw-normal lh-1">Meet your event planner</h2>
         <p class="lead">Hi There,<br> 
           <br>"For a while, I followed the expected path, stepping into a 9-to-5 job. But it didn’t take long for 
           me to realize it wasn’t my cup of tea. I always had this notion of doing something bigger, 
@@ -750,7 +1060,7 @@
           milestone in life. There’s nothing more rewarding than transforming ideas into magical 
           experiences and creating memories that last a lifetime."</br> 
           <br><b>Cheers, 
-          <br>DEE</b></br> </p>
+          <br>Dee</b></br> </p>
       </div>
       <div class="col-md-5 d-flex justify-content-center align-items-center">
         <img src="Images/image1.jpg" class="featurette-img img-fluid" alt="Featurette Image">
@@ -759,9 +1069,6 @@
     </div>
     
     <hr class="featurette-divider">
-
-
-
 
 
     <!-- /END THE FEATURETTES -->
@@ -887,6 +1194,8 @@
     });
 });
 
+
+
 /*second section*/
 document.addEventListener("DOMContentLoaded", function () {
     let featurette = document.querySelector('.featurette-box');
@@ -915,7 +1224,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <!-- FOOTER -->
   <footer class="container">
     <p class="float-end"><a href="#">⬆</a></p>
-    <p>&copy; 2025-2030 DeeOrbix LLC.<a href="#"></a></p>
+    <p>&copy; 2025 DeeOrbix LLC.<a href="#"></a></p>
   </footer>
 </main>
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
