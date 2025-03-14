@@ -47,10 +47,6 @@ p, a, button {
     font-size: 1.1rem;
 }
 
-/* Navbar Styling */
-.navbar {
-    font-family: 'Cormorant Garamond', serif;
-}
 
 /* Buttons - Elegant Yet Readable */
 button, .btn {
@@ -75,21 +71,7 @@ footer {
 }
 
       /*end of style of font for the entire web page*/
-.custom-black-button {
-    background-color: black !important;  /* Makes the button always black */
-    border: 2px solid black !important;  /* Ensures border stays black */
-    color: white !important;  /* Ensures text stays white */
-    font-weight: bold;
-    padding: 10px 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Adds a subtle shadow */
-    transition: all 0.3s ease-in-out;
-}
 
-.custom-black-button:hover {
-    background-color: #333 !important; /* Slightly lighter black on hover */
-    border-color: #fff;
-    transform: scale(1.05);
-}
 
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -207,11 +189,11 @@ footer {
     
     <header data-bs-theme="dark">
       <!-- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> -->
-        <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #a1ccc2;">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #f7faf9;">
         <div class="container-fluid">
           <!-- Fancy DecorByDee -->
           <a class="navbar-brand me-auto" href="#" id="decorbydee">
-            <span class="fancy-letter">Decor By Dee</span>
+            <span class="fancy-letter">Decor by Dee</span>
           </a>
     
           <!-- Navbar toggle button for small screens -->
@@ -242,9 +224,9 @@ footer {
                 </li>
                 <li class="nav-item">
                   <!-- <button class="btn btn-primary nav-link text-white" data-bs-toggle="modal" data-bs-target="#contactModal"> -->
-                    <button class="btn custom-black-button text-white" data-bs-toggle="modal" data-bs-target="#contactModal">
+                    <button class="btn custom-black-button" data-bs-toggle="modal" data-bs-target="#contactModal">
                     BOOK NOW
-                </button>
+                </button>
               </li>
               
             </ul>
@@ -314,43 +296,45 @@ footer {
       /* Import Google Fonts */
       @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Tangerine:wght@700&family=Playfair+Display:wght@600&display=swap');
 
-      /* Style the Navbar */
+     
+/*new code */
       .navbar {
-          min-height: 60px; /* Adjust height */
-          padding: 10px 20px;
-          /*background-color: #a1ccc2 !important;*/
-          background-color: linear-gradient(135deg, #a1ccc2, #ffffff);
-}
-
-      
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            box-shadow: 0 4px 10px #a1ccc2;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease-in-out;
+        }
 
       /* Navbar Brand */
       #decorbydee {
-          font-family: 'Brush script MT', cursive;
+          font-family: 'Brush Script MT', cursive;
           font-size: 3rem;
-          color: #FFFFFF;
+          color: #a1ccc2;
           text-decoration: none;
           letter-spacing: 1px;
           line-height: 1;
       }
 
-      /* Navbar links */
-      .navbar-nav {
-        flex-direction: column;
-        text-align: center;
-      }
 
+      /* Navbar Links */
       .navbar-nav .nav-link {
-          font-size: 1.1rem;
-          font-weight: bold;
-          letter-spacing: 1px;
-          color: white !important;
-          transition: color 0.3s ease-in-out;
-      }
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #444 !important;
+            padding: 10px 15px;
+            transition: all 0.3s ease-in-out;
+            border-radius: 5px;
+        }
 
-      .navbar-nav .nav-link:hover {
-          color: #070707 !important;
-      }
+       /* Hover Effect */
+       .navbar-nav .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
 
       /* Ensure all elements in the same line */
       .navbar-collapse {
@@ -373,7 +357,7 @@ footer {
       }
 
       .custom-services:hover {
-          color: #ffffff !important;
+          color: black !important;
       }
 
       /* Dropdown Styling */
@@ -418,27 +402,22 @@ footer {
           border-radius: 5px;
       }
 
-      /* Book Now Button */
-      .custom-black-button {
-          background-color: black !important;
-          border: 2px solid black !important;
-          color: white !important;
-          font-weight: bold;
-          padding: 8px 20px;
-          text-align: center;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-          transition: all 0.3s ease-in-out;
-          height: 40px;
-      }
+       /* Floating Button */
+       .custom-black-button {
+            background-color: black;
+            border: 2px solid black;
+            color: #a1ccc2;
+            font-weight: bold;
+            padding: 10px 20px;
+            transition: all 0.3s ease-in-out;
+            border-radius: 50px;
+        }
 
-      .custom-black-button:hover {
-          background-color: #333 !important;
-          border-color: #fff;
-          transform: scale(1.05);
-      }
+        .custom-black-button:hover {
+            background-color: #a1ccc2;
+            color: black;
+            transform: scale(1.05);
+        }
   </style>
     
     
@@ -455,7 +434,7 @@ footer {
   
     <div class="carousel-inner">
       <!-- First Slide: Birthday Events -->
-      <div class="carousel-item active" style="background-image: url('Images/birthday.png');">
+      <div class="carousel-item active" style="background-image: url('Images/birthday.jpeg');">
         <div class="container">
           <div class="carousel-caption text-start">
             <h1>Birthday Events</h1>
@@ -1174,7 +1153,7 @@ footer {
   });
 
   
-  /*macro Button script*/
+  /macro Button script/
   document.addEventListener("DOMContentLoaded", function() {
     let callMacro = document.getElementById("call-macro");
     let toggleMacro = document.getElementById("toggle-macro");
@@ -1196,7 +1175,7 @@ footer {
 
 
 
-/*second section*/
+/second section/
 document.addEventListener("DOMContentLoaded", function () {
     let featurette = document.querySelector('.featurette-box');
 
